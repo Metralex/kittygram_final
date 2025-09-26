@@ -37,7 +37,7 @@ jobs:
         POSTGRES_DB: django_db
         DB_HOST: 127.0.0.1
         DB_PORT: 5432
-        SECRET_KEY: ${{ secrets.SECRET_KEY }}
+        SECRET_KEY: SECRET_KEY
         ALLOWED_HOSTS: ALLOWED_HOSTS
       run: |
         python -m flake8 backend/
@@ -63,7 +63,7 @@ jobs:
         with:
           context: ./backend/
           push: true
-          tags: miscanth/kittygram_backend:latest
+          tags: metralex/kittygram_backend:latest
 
   frontend_tests:
     runs-on: ubuntu-latest
@@ -101,7 +101,7 @@ jobs:
         with:
           context: ./frontend/
           push: true
-          tags: miscanth/kittygram_frontend:latest
+          tags: metralex/kittygram_frontend:latest
 
   build_gateway_and_push_to_docker_hub:
     name: Push gateway Docker image to DockerHub
@@ -121,7 +121,7 @@ jobs:
         with:
           context: ./nginx/
           push: true
-          tags: miscanth/kittygram_gateway:latest
+          tags: metralex/kittygram_gateway:latest
 
   deploy:
     runs-on: ubuntu-latest
