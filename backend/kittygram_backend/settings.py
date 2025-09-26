@@ -8,7 +8,7 @@ SECRET_KEY = 'django-insecure-cg6*%6d51ef8f#4!r3*$vmxm4)abgjw8mo!4y-q*uq1!4$-89$
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '62.84.120.171', '0.0.0.0:8000', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '62.84.120.171', '0.0.0.0:8000', '127.0.0.1', 'showmethecat.hopto.org', 'catexcibition.ddns.net']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -119,3 +119,8 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://showmethecat.hopto.org",
+    "https://catexcibition.ddns.net",
+]

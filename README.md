@@ -8,10 +8,10 @@
 
 В корне репозитория создайте файл tests.yml со следующим содержимым:
 ```yaml
-repo_owner: ваш_логин_на_гитхабе
-kittygram_domain: полная ссылка (https://доменное_имя) на ваш проект Kittygram
-taski_domain: полная ссылка (https://доменное_имя) на ваш проект Taski
-dockerhub_username: ваш_логин_на_докерхабе
+repo_owner: metralex
+kittygram_domain: https://github.com/Metralex/kittygram_final
+taski_domain: https://github.com/Metralex/taski-docker
+dockerhub_username: metralex
 ```
 
 Скопируйте содержимое файла `.github/workflows/main.yml` в файл `kittygram_workflow.yml` в корневой директории проекта.
