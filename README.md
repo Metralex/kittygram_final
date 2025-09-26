@@ -9,8 +9,8 @@
 В корне репозитория создайте файл tests.yml со следующим содержимым:
 ```yaml
 repo_owner: metralex
-kittygram_domain: https://github.com/Metralex/kittygram_final
-taski_domain: https://github.com/Metralex/taski-docker
+kittygram_domain: https://showmethecat.hopto.org/
+taski_domain: https://catexcibition.ddns.net/
 dockerhub_username: metralex
 ```
 
