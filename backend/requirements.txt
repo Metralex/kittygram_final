@@ -5,7 +5,8 @@ gunicorn==21.2.0
 webcolors==1.13
 psycopg2-binary==2.9.9
 Pillow==10.3.0
-pytest==8.2.0
-pytest-django==4.8.0
 PyYAML==6.0.2
+pytest==6.2.4
+pytest-django==4.4.0
+pytest-pythonpath==0.7.3
 
