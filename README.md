@@ -28,19 +28,11 @@ cd kittygram_final
 
 2. Создайте и активируйте виртуальное окружение и обновите pip.
 
-На Windows (PowerShell):
+На Windows:
 
 ```powershell
 python -m venv venv
 .\venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-```
-
-В CMD (Windows):
-
-```cmd
-python -m venv venv
-venv\Scripts\activate.bat
 python -m pip install --upgrade pip
 ```
 
@@ -52,7 +44,7 @@ source venv/bin/activate
 python3 -m pip install --upgrade pip
 ```
 
-3. Установите зависимости (перейдите в папку backend, если требуется):
+3. Установите зависимости:
 
 ```bash
 cd backend/
