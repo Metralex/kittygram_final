@@ -151,3 +151,4 @@ media/
 # Others
 node_modules
 .code-workspace
+docker-compose.yml
