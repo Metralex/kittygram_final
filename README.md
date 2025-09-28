@@ -1,5 +1,5 @@
 #  Как работать с репозиторием финального задания
-
+[![Main Kittygram workflow](https://github.com/Metralex/kittygram_final/actions/workflows/main.yml/badge.svg)](https://github.com/Metralex/kittygram_final/actions/workflows/main.yml)
 ## Что нужно сделать
 
 Настроить запуск проекта Kittygram в контейнерах и CI/CD с помощью GitHub Actions
