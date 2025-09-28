@@ -1,9 +1,10 @@
-#  Kittygram final
+# Kittygram final
+
 [![Main Kittygram workflow](https://github.com/Metralex/kittygram_final/actions/workflows/main.yml/badge.svg)](https://github.com/Metralex/kittygram_final/actions/workflows/main.yml)
 
 ### Описание проекта
 
-Проект Kittygram - социальная сеть на Djang/React для обмена фотографиями котов. Есть возможность входа/регистрации, создания и редактирования постов с фото котиков и добавления им достижений.
+Проект Kittygram — социальная сеть на Django/React для обмена фотографиями котов. Приложение поддерживает регистрацию и вход, создание и редактирование постов с фотографиями и добавление достижений к профилям.
 
 ### Стек использованных технологий
 
@@ -18,44 +19,59 @@
 
 ### Как локально развернуть проект
 
-Клонировать репозиторий и перейти в него в командной строке: 
-```
-git clone git@github.com:Metralex/kittygram_final.git
+1. Клонируйте репозиторий:
 
-Cоздать и активировать виртуальное окружение и обновить pip: 
+```bash
+git clone git@github.com:metralex/kittygram_final.git
+cd kittygram_final
 ```
- 
-```
-* На Windows 
- 
-    ```
-    python3 -m venv venv
-    source venv/scripts/activate
-    python3 -m pip install --upgrade pip
-    ```
-* На Linux или MacOS 
 
-    ```
-    python -m venv venv 
-    source venv/bin/activate
-    python -m pip install --upgrade pip
-    ```
+2. Создайте и активируйте виртуальное окружение и обновите pip.
 
-Установить зависимости из файла requirements.txt:
+На Windows (PowerShell):
+
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
 ```
+
+В CMD (Windows):
+
+```cmd
+python -m venv venv
+venv\Scripts\activate.bat
+python -m pip install --upgrade pip
+```
+
+На Linux или macOS:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+python3 -m pip install --upgrade pip
+```
+
+3. Установите зависимости (перейдите в папку backend, если требуется):
+
+```bash
 cd backend/
 pip install -r requirements.txt
 ```
 
-Выполнить миграции:
-```
+4. Примените миграции:
+
+```bash
 python3 manage.py migrate
 ```
 
-Запустить проект:
-```
+5. Запустите сервер разработки:
+
+```bash
 python3 manage.py runserver
 ```
+
+---
 
 ### CI/CD
 
@@ -67,12 +83,12 @@ python3 manage.py runserver
 2.  **Тестирование**: Выполнение автоматических тестов для фронтенда и бэкенда.
 3.  **Сборка и публикация Docker-образов**: После успешного прохождения тестов workflow собирает Docker-образы и загружает их в Docker Hub.
 4.  **Развертывание на сервере**:
-    *   Устанавливается безопасное SSH-соединение с сервером.
-    *   Загружаются актуальные версии Docker-образов.
-    *   Приложение перезапускается с помощью `docker-compose.production.yml`.
+    - Устанавливается безопасное SSH-соединение с сервером.
+    - Загружаются актуальные версии Docker-образов.
+    - Приложение перезапускается с помощью `docker-compose.production.yml`.
 5.  **Задачи после развертывания**:
-    *   Применяются миграции базы данных (`manage.py migrate`).
-    *   Собираются и переносятся статические файлы.
+    - Применяются миграции базы данных (`manage.py migrate`).
+    - Собираются и переносятся статические файлы.
 6.  **Уведомления**: Отправляется сообщение в Telegram об успешном завершении развертывания.
 
 **Настройка Workflow:**
@@ -82,9 +98,9 @@ python3 manage.py runserver
 
 **Секреты для GitHub Actions:**
 
-Для работы workflow необходимо добавить следующие переменные в `Settings → Secrets and variables → Actions` вашего репозитория:
+Добавьте в `Settings → Secrets and variables → Actions` вашего репозитория следующие переменные:
 
-```
+```text
 DOCKER_USERNAME    # Логин в Docker Hub
 DOCKER_PASSWORD    # Пароль или токен для Docker Hub
 SSH_KEY            # Приватный SSH-ключ для доступа к серверу
@@ -97,22 +113,28 @@ TELEGRAM_TOKEN     # Токен Telegram-бота
 
 **Файлы Docker Compose:**
 
-- `docker-compose.yml`: для локальной разработки.
-- `docker-compose.production.yml`: для развертывания на сервере.
+- `docker-compose.yml` — для локальной разработки.
+- `docker-compose.production.yml` — для развертывания на сервере.
 
-Задайте учётные данные БД в .env файле, используя .env.example:
+---
 
-## как заполнить env
-```
-POSTGRES_DB=название БД
+### Как заполнить `.env`
+
+Создайте файл `.env` на основе `.env.example` и заполните переменные окружения, например:
+
+```text
+POSTGRES_DB=название_БД
 POSTGRES_USER=логин
 POSTGRES_PASSWORD=пароль
-DB_NAME=имя БД
-DB_HOST=название хоста
+DB_NAME=имя_БД
+DB_HOST=адрес_хоста
 DB_PORT=5432
 SECRET_KEY=django_settings_secret_key
-ALLOWED_HOSTS=localhost,0.0.0.0:8000,127.0.0.1,ip сервера,адрес сайта
+ALLOWED_HOSTS=localhost,0.0.0.0:8000,127.0.0.1,ip_сервера,адрес_сайта
 ```
 
-## Автор:
-Metralex https://github.com/Metralex
+---
+
+## Автор
+
+Metralex — https://github.com/Metralex
